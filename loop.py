@@ -434,3 +434,58 @@ print(f"Product 1 generated ${(1 * priceProductOne) + (2 * priceProductOneSecond
 print(f"Product 2 generated ${(1 * priceProdutTwo) + (2 * priceProdutTwoSecond) + (3 * priceProductTwoThird)} in revenue")
 print(f"Product 3 generated ${'{:.2f}'.format(5 * priceProductThree)} in revenue")
                                                             
+print('---')
+
+cars = [
+    {
+        'model': 'Sedan',
+        'parts': [
+            'engine',
+            'transmission',
+            'chassis',
+            'wheels',
+        ],
+        'cost': 20000,
+    },
+    {
+        'model': 'SUV',
+        'parts': [
+            'engine',
+            'transmission',
+            'chassis',
+            'wheels',
+            'air conditioning',
+            'infotainment system',
+        ],
+        'cost': 35000,
+    },
+    {
+        'model': 'Hatchback',
+        'parts': [
+            'engine',
+            'transmission',
+            'chassis',
+            'wheels',
+            'air conditioning',
+        ],
+        'cost': 25000,
+    },
+    {
+        'model': 'Pickup Truck',
+        'parts': [
+            'engine',
+            'transmission',
+            'chassis',
+            'wheels',
+            'towing package',
+            'bed liner',
+        ],
+        'cost': 40000,
+    },
+]
+
+modelCars = []
+
+for model in cars:
+    modelCars.append(model['model'])
+
