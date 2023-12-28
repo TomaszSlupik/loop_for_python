@@ -385,3 +385,52 @@ print(f"Total number of delayed flights: {len(flights_count)}")
 print(f"Average delay time: {avg_flight} minutes")
 
 print('---')
+
+# Oblicz wygenerowany dzienny przychód dla każdego sprzedanego produktu. 
+sales = [
+    {'product_id': 1, 'quantity': 3, 'price': 10.99},
+    {'product_id': 2, 'quantity': 1, 'price': 34.99},
+    {'product_id': 1, 'quantity': 2, 'price': 10.99},
+    {'product_id': 3, 'quantity': 5, 'price': 5.99},
+    {'product_id': 2, 'quantity': 2, 'price': 34.99},
+    {'product_id': 1, 'quantity': 1, 'price': 10.99},
+]
+
+
+priceProductOne = 0
+priceProductOneSecond = 0
+priceProductOneThird = 0
+
+
+
+priceProdutTwo = 0
+priceProdutTwoSecond = 0
+priceProductTwoThird = 0
+
+
+priceProductThree = 0
+priceProdutThreeSecond = 0
+priceProductThreeThird = 0
+
+# -- zliczenie ilości oraz ceny dla każdeo produktu ID
+for sale in sales:
+    if sale['product_id'] == 1 and sale['quantity'] == 1:
+        priceProductOne += sale['price']
+    if sale['product_id'] == 1 and sale['quantity'] == 2:
+        priceProductOneSecond += sale['price']
+    if sale['product_id'] == 1 and sale['quantity'] == 3:
+        priceProductOneThird += sale['price']
+    if sale['product_id'] == 2 and sale['quantity'] == 1:
+        priceProdutTwo += sale['price']
+    if sale['product_id'] == 2 and sale['quantity'] == 2:
+        priceProdutTwoSecond += sale['price']
+    if sale['product_id'] == 2 and sale['quantity'] == 3:
+        priceProductTwoThird += sale['price']
+    if sale['product_id'] == 3 and sale['quantity'] == 5:
+        priceProductThree += sale['price']
+ 
+
+print(f"Product 1 generated ${(1 * priceProductOne) + (2 * priceProductOneSecond) + (3 * priceProductOneThird)} in revenue")
+print(f"Product 2 generated ${(1 * priceProdutTwo) + (2 * priceProdutTwoSecond) + (3 * priceProductTwoThird)} in revenue")
+print(f"Product 3 generated ${'{:.2f}'.format(5 * priceProductThree)} in revenue")
+                                                            
