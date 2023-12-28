@@ -524,7 +524,7 @@ print(f"Wall = {len(wall_count)}")
 
 print('---')
 
-# 
+# gra planszowa
 board = [
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.'],
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -538,4 +538,16 @@ board = [
     ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.'],
 ]
 
-
+colors = ['A', 'B', 'C', 'D']
+color_index = 0
+ 
+for row in range(len(board)):
+    for col in range(len(board[row])):
+        if color_index == 4:
+            color_index = 0
+        if (row + col) % 3 == 0:
+            board[row][col] = colors[color_index]
+            color_index += 1
+ 
+for row in board:
+    print(row)
