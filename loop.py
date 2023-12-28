@@ -489,6 +489,11 @@ print(dict(models_and_costs))
 
 print('---')
 
+
+# Wykorzystując zagnieżdżoną pętlę for zlicz liczbę wystąpień ścian (wall) 
+# oraz otwartych przestrzeni (floor).
+# Labirynt składa się ze ścian - reprezentowanych przez 'X' 
+# otwartych przestrzeni - reprezentowanych przez '_'
 maze = [
     ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
     ['X', '_', '_', '_', '_', '_', '_', '_', '_', 'X'],
@@ -501,3 +506,12 @@ maze = [
     ['X', '_', '_', '_', '_', '_', 'X', '_', '_', 'X'],
     ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
 ]
+
+wall_count = []
+
+for wall in maze:
+        for wall in wall:
+            if wall == 'X':
+                wall_count.append(wall)
+
+print(f"Wall = {len(wall_count)}")
