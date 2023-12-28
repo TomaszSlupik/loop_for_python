@@ -319,7 +319,7 @@ for point in points:
 
     if point['player'] == 'Bob':
         bobScore += point['scored']
-    
+
     if point['player'] == 'Charlie':
         charlieScore += point['scored']
 
@@ -386,7 +386,7 @@ print(f"Average delay time: {avg_flight} minutes")
 
 print('---')
 
-# Oblicz wygenerowany dzienny przychód dla każdego sprzedanego produktu. 
+# Oblicz wygenerowany dzienny przychód dla każdego sprzedanego produktu.
 sales = [
     {'product_id': 1, 'quantity': 3, 'price': 10.99},
     {'product_id': 2, 'quantity': 1, 'price': 34.99},
@@ -400,7 +400,6 @@ sales = [
 priceProductOne = 0
 priceProductOneSecond = 0
 priceProductOneThird = 0
-
 
 
 priceProdutTwo = 0
@@ -428,12 +427,15 @@ for sale in sales:
         priceProductTwoThird += sale['price']
     if sale['product_id'] == 3 and sale['quantity'] == 5:
         priceProductThree += sale['price']
- 
 
-print(f"Product 1 generated ${(1 * priceProductOne) + (2 * priceProductOneSecond) + (3 * priceProductOneThird)} in revenue")
-print(f"Product 2 generated ${(1 * priceProdutTwo) + (2 * priceProdutTwoSecond) + (3 * priceProductTwoThird)} in revenue")
-print(f"Product 3 generated ${'{:.2f}'.format(5 * priceProductThree)} in revenue")
-                                                            
+
+print(
+    f"Product 1 generated ${(1 * priceProductOne) + (2 * priceProductOneSecond) + (3 * priceProductOneThird)} in revenue")
+print(
+    f"Product 2 generated ${(1 * priceProdutTwo) + (2 * priceProdutTwoSecond) + (3 * priceProductTwoThird)} in revenue")
+print(
+    f"Product 3 generated ${'{:.2f}'.format(5 * priceProductThree)} in revenue")
+
 print('---')
 
 cars = [
@@ -490,9 +492,9 @@ print(dict(models_and_costs))
 print('---')
 
 
-# Wykorzystując zagnieżdżoną pętlę for zlicz liczbę wystąpień ścian (wall) 
+# Wykorzystując zagnieżdżoną pętlę for zlicz liczbę wystąpień ścian (wall)
 # oraz otwartych przestrzeni (floor).
-# Labirynt składa się ze ścian - reprezentowanych przez 'X' 
+# Labirynt składa się ze ścian - reprezentowanych przez 'X'
 # otwartych przestrzeni - reprezentowanych przez '_'
 maze = [
     ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
@@ -508,10 +510,14 @@ maze = [
 ]
 
 wall_count = []
+floor_count = []
 
 for wall in maze:
-        for wall in wall:
-            if wall == 'X':
-                wall_count.append(wall)
+    for cell in wall:
+        if cell == 'X':
+            wall_count.append(cell)
+        elif cell == '_':
+            floor_count.append(cell)
 
+print(f"Floor = {len(floor_count)}")
 print(f"Wall = {len(wall_count)}")
